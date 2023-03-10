@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버거킹</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+</head>
+
+<style>
+  /* 공통 스타일 */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* 헤더 */
+  header {
+    width: 100%;
+    background-color: aqua;
+    position: fixed;
+  }
+
+  .inner {
+    /* 1100px 이상 늘어나지 않음 */
+    max-width: 1100px;
+    height: 120px;
+    /* 가운데 정렬 / 0: 상하 / auto: 좌우 */
+    /* margin 0 auto 쓰려면, width 값이 있어야 함 */
+    margin: 0 auto;
+    background-color: skyblue;
+    display: flex;
+  }
+
+  .inner > h1 {
+    width: 100px;
+    background-color: yellowgreen;
+  }
+
+  .inner > nav {
+    /* width: calc(100% - 268px); */
+    /* h1 / delivery_order 제외한 부분을 화면에 꽉 차게 만드려면 flex-grow */
+    flex-grow: 1;
+    background-color: rebeccapurple;
+  }
+  
+  /* 메뉴 가로 정렬 */
+  .inner > nav > ul {
+    display: flex;
+    /* space-evenly : 각각 요소와 사이드 너비 동일하게 */
+    justify-content: space-evenly;
+  }
+  
+  ul {
+    font-size: 16px;
+    font-style: normal;
+    color: black;
+  }
+
+  .inner > .delivery_order {
+    width: 168px;
+    background-color: orange;
+  }
+
+
+  /* 메인 */
+  main {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .slider__content {
+    height: 480px;
+    background-color: thistle;
+  }
+
+  .youtube__content {
+    height: 605px;
+    background-color: tomato;
+  }
+
+  .sns__content {
+    height: 160px;
+    background-color: turquoise;
+  }
+
+  .sns__content > ul {
+    display: flex;
+  }
+
+  .sns__content > ul > li {
+    /* 각각의 요소가 1 : 1 : 1 */
+    flex: 1;
+    text-align: center;
+  }
+
+  .guide__content {
+    height: 480px;
+    background-color: darkgoldenrod;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .guide__content > .content__app {
+    text-align: center;
+    flex: 1;
+    background-color: cornflowerblue;
+  }
+
+  .guide__content > .content__delivery {
+    text-align: center;
+    flex: 1;
+    background-color: darkkhaki
+  }
+
+  /* .guide__content > div {
+    flex: 1;
+  }
+
+  .guide__content > .content__app {
+    background-color: cornflowerblue;
+  }
+  .guide__content > .content__delivery {
+    background-color: darkkhaki
+  } */
+
+  .store__content {
+    height: 597px;
+    background-color: pink;
+  }
+
+  .store__content ul {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .store__content ul > li {
+    float: left;
+    width: 16.666%;
+    text-align: center;
+  }
+
+  .banner__content {
+    height: 200px;
+    background-color: coral;
+  }
+
+  footer {
+    width: 100%;
+    height: 680px;
+    background-color: #444;;
+  }
+
+  /* ***** */
+  /* @media query는 내가 작성한 CSS의 가장 맨 아래에 작성 */
+
+
+  /* @media : max-width
+  = max-width 까지는 원래 크기로
+  = max-width 이하로는 @media query 적용 */
+  @media screen and (max-width: 768px) {
+    .guide__content {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .store__content ul > li {
+      /* float: left; ----> 또 쓸 필요 없음 */
+      width: 33.33%;
+    }
+  }
+
+
+</style>
+
+
+<body>
+
+  <header>
+    <div class="inner">
+
+      <h1>로고 자리</h1>
+      
+      <nav>
+        <ul>
+          <li>메뉴소개</li>
+          <li>매장소개</li>
+          <li>이벤트</li>
+          <li>브랜드 스토리</li>
+        </ul>
+      </nav>
+      
+      <div class="delivery_order">딜리버리 주문</div>
+    </div>
+
+  </header>
+
+
+  <main>
+    <section class="slider">
+      <div class="slider__content">슬라이드 이미지</div>
+    </section>
+
+    <section class="youtube">
+      <div class="youtube__content">유튜브 영상</div>
+    </section>
+
+    <section class="sns">
+      <div class="sns__content">
+        <ul>
+          <li>youtube</li>
+          <li>facebook</li>
+          <li>instagram</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="guide">
+      <div class="guide__content">
+        <div class="content__app">app</div>
+        <div class="content__delivery">delivery</div>
+      </div>
+    </section>
+
+    <section class="store">
+      <div class="store__content">
+        <div>매장찾기</div>
+        <ul>
+          <li>딜리버리</li>
+          <li>킹오더</li>
+          <li>드라이브스루</li>
+          <li>24시간</li>
+          <li>아침메뉴</li>
+          <li>주차공간</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div class="banner__content">배너 자리</div>
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="menu">
+      <div class="menu__content">
+        <ul>
+          <li>메뉴</li>
+          <li>매장</li>
+          <li>이벤트</li>
+          <li>브랜드스토리</li>
+          <li>고객센터</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="bottom__content_lt"></div>
+      <div class="bottom__content_rt"></div>
+    </div>
+  </footer>
+  
+</body>
+</html>

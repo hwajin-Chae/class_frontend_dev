@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네이버 : 회원가입</title>
+</head>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+
+<style>
+
+  * {
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  body {
+    font-family: Dotum, 돋움, Helvetica, sans-serif;
+    background-color: #f5f6f7;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  img {
+    width: 200px;
+  }
+
+  /* #header {
+    background-color: orange;
+  } */
+
+  .top {
+    max-width: 768px;
+    /* height: 124px; */
+    height: 148px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+  }
+
+  #container {
+    max-width: 768px;
+    /* height: 996px; */
+    height: 1048px;
+    /* background-color: cornflowerblue; */
+    margin: 0 auto;
+  }
+
+  .section-input {
+    width: 460px;
+    margin: 0 auto;
+  }
+
+  focus-within {
+    border: 1px solid #03CF5D;
+  }
+
+  input {
+    border: 1px solid lightgray;
+    cursor: pointer;
+  }
+
+  select {
+    border: 1px solid lightgray;
+  }
+
+  h3 {
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  span.select {
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 400;
+    color: #555;
+  }
+
+  #id {
+    width: 400px;
+    height: 50px;
+    font-size: 16px;
+    padding: 10px 110px 10px 14px;
+  }
+  
+  span.text_id {
+    position: relative;
+  }
+
+  span.text_id_mail {
+    position: absolute;
+    top: 1px;
+    right: 20px;
+    font-size: 14px;
+    color: #777;
+  }
+
+  #pw_01 {
+    width: 400px;
+    height: 50px;
+    font-size: 16px;
+    padding: 10px 40px 10px 14px;
+  }
+
+  #pw_02 {
+    width: 400px;
+    height: 50px;
+    font-size: 16px;
+    padding: 10px 40px 10px 14px;
+  }
+
+  #name {
+    width: 400px;
+    height: 50px;
+    font-size: 16px;
+    padding: 10px 14px 10px 14px;
+  }
+
+  #birth_yy {
+    width: 130px;
+    height: 50px;
+    padding: 10px 14px 10px 14px;
+  }
+
+  #birth_mm {
+    width: 130px;
+    height: 50px;
+    padding: 10px 20px 10px 14px;
+    cursor: pointer;
+  }
+
+  #birth_dd {
+    width: 130px;
+    height: 50px;
+    padding: 10px 14px 10px 14px;
+  }
+
+  #gender {
+    width: 400px;
+    height: 50px;
+    padding: 10px 20px 10px 14px;
+    cursor: pointer;
+  }
+
+  #mail {
+    width: 400px;
+    height: 50px;
+    padding: 10px 14px 10px 14px;
+  }
+
+  #mobile {
+    width: 400px;
+    height: 50px;
+    padding: 10px 20px 10px 14px;
+    cursor: pointer;
+  }
+
+  #mobile_number {
+    width: 278px;
+    height: 50px;
+    padding: 10px 14px 10px 14px;
+  }
+
+  #certify {
+    width: 120px;
+    height: 50px;
+    background-color: #03CF5D;
+    border: none;
+    cursor: pointer;
+  }
+  
+  span.certify {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+   }
+
+  #certify_number {
+    width: 400px;
+    height: 50px;
+    padding: 10px 14px 10px 14px;
+  }
+
+  #btn_join {
+    width: 400px;
+    height: 52px;
+    background-color: #03CF5D;
+    border: none;
+    cursor: pointer;
+  }
+  
+  span.btn_join {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+   }
+
+
+
+  #footer {
+    /* background-color: pink; */
+
+    font-size: 12px;
+    color: #333;
+
+    margin: 0 0 9px 0;
+  }
+
+  span.footer_text {
+    color: #666;
+  }
+
+  span.footer_text02 {
+    color: #666;
+    font-weight: 700;
+  }
+
+  .bottom {
+    max-width: 768px;
+    height: 83px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+  }
+
+
+</style>
+
+<body>
+  
+  <!-- 헤더 영역 -->
+  <div id="header">
+    <div class="top">
+      <!-- h1 안에, a href로 로고... 이전부터 그렇게 해옴.
+        # 임시 링크 태그. # 넣으면 새로고침 안됨 -->
+      <h1>
+        <a href="#">
+          <img src="images/m_logo_naver.png" alt="logo">
+        </a>
+      </h1>
+    </div>
+  </div>
+
+  <!-- 메인(콘테이너) 영역 -->
+  <div id="container">
+    <div class="section-input">
+      
+      <!-- 아이디~비밀번호 재확인 -->
+      <h3>
+        <label for="id">아이디</label>
+      </h3><br>
+      <span class="text_id">
+        <input type="text" id="id" maxlength="20">
+        <span class="text_id_mail">@naver.com</span>
+      </span>
+      <br><br>
+      
+      <h3>
+        <label for="pw_01">비밀번호</label>
+      </h3><br>
+      <input type="password" id="pw_01"><br><br>
+      
+      <h3>
+        <label for="pw_02">비밀번호 재확인</label>
+      </h3><br>
+      <input type="text" id="pw_02"><br><br>
+
+
+      <!-- 이름~본인확인 이메일 -->
+      <br><h3>
+        <label for="name">이름</label>
+      </h3><br>
+      <input type="text" id="name" maxlength="4"><br><br>
+
+      <h3>
+        <label for="birth_wrap">생년월일</label>
+      </h3><br>
+        <span class="birth_yy"></span>
+        <input type="text" id="birth_yy" placeholder="년(4자)">
+
+        <span class="birth_mm"></span>
+        <select name="month" id="birth_mm">
+          <option value="" selected>월</option>
+          <option value="birth_mm">1</option>
+          <option value="birth_mm">2</option>
+          <option value="birth_mm">3</option>
+          <option value="birth_mm">4</option>
+          <option value="birth_mm">5</option>
+          <option value="birth_mm">6</option>
+          <option value="birth_mm">7</option>
+          <option value="birth_mm">8</option>
+          <option value="birth_mm">9</option>
+          <option value="birth_mm">10</option>
+          <option value="birth_mm">11</option>
+          <option value="birth_mm">12</option>
+        </select>
+
+        <span class="birth_dd"></span>
+        <input type="text" id="birth_dd" placeholder="일">
+
+        <br><br><h3>
+          <label for="gender">성별</label>
+        </h3><br>
+        <span class="gender"></span>
+        <select name="gender" id="gender">
+          <option value="">성별</option>
+          <option value="gender_mm">남자</option>
+          <option value="gender_ff">여자</option>
+          <option value="gender_mf">선택안함</option>
+        </select>
+
+        <br><br><h3>
+          <label for="mail">본인확인 이메일<span class="select">(선택)</span></label>
+        </h3><br>
+        <input type="text" id="mail" placeholder="선택입력"><br><br>
+
+        <br><br><h3>
+          <label for="mobile">휴대전화</label>
+        </h3><br>
+        <span class="mobile"></span>
+        <select name="mobile" id="mobile">
+          <option value="">그리스 +30</option>
+          <option value="" selected>대한민국 +82</option>
+          <option value="">아르헨티나 +54</option>
+          <option value="">페루 +51</option>
+        </select>
+        
+        <br><br>
+        <span class="mobile_number"></span>
+        <input type="mobile_number" id="mobile_number" placeholder="전화번호 입력">
+        
+        
+        <button type="button" id="certify"><span class="certify">인증번호 받기</span></button>
+
+        <br><br>
+        <input type="certify_number" id="certify_number"
+        placeholder="인증번호 입력하세요" disabled><br><br>
+
+        <button type="button" id="btn_join"><span class="btn_join">가입하기</span></button>
+        
+
+
+    </div>
+  </div>
+  
+  <!-- 푸터 영역 -->
+  <div id="footer">
+    <div class="bottom">
+      <div class="bt_menu">
+        <a href="#"><span class="footer_text">이용약관 |</span></a>
+        <a href="#"><span class="footer_text02">개인정보처리방침</span></a>
+        <a href="#"><span class="footer_text">| 책임의 한계와 법적고지</span></a>
+        <a href="#"><span class="footer_text">| 회원정보 고객센터</span></a>
+      </div>
+      <br>
+      <div class="copyright">
+        <a href="#"><span class="footer_text">ⓒ NAVER Corp.</span></a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
